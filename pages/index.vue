@@ -1,12 +1,20 @@
 <script setup lang="ts">
-onMounted(() => {
-  postMessage({ payload: 'removeLoading' }, '*')
-})
+const { data } = await useFetch<{
+  id: number
+  title: string
+  completed: boolean
+}[]>('https://jsonplaceholder.typicode.com/todos')
 </script>
 
 <template>
   <div>
-    <div>Hello from index</div>
-    <NuxtLink to="/hello">Hello</NuxtLink>
+    <h1>Todos</h1>
+    <ul>
+      <li v-for="t in data" :key="t.id">
+        <NuxtLink :to="`/todo/${t.id}`">
+          {{ t.title }}
+        </NuxtLink>
+      </li>
+    </ul>
   </div>
 </template>
