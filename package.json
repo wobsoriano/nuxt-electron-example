@@ -11,13 +11,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node-cron": "^3.0.6",
     "electron": "^22.0.0",
     "nuxt": "3.0.0",
-    "vite-plugin-electron": "^0.10.4",
-    "vite-plugin-electron-renderer": "^0.11.3"
-  },
-  "dependencies": {
-    "node-cron": "^3.0.2"
+    "vite-plugin-electron": "^0.10.4"
   }
 }
